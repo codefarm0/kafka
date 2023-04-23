@@ -1,4 +1,4 @@
-# Kafaka learning series
+# Kafka learning series
 
 ## Kafka Chapter 1
 
