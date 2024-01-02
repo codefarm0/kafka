@@ -1,2 +1,0 @@
-server.port=9095
-##kafka.brokerConnect=localhost:9092,localhost:9093
