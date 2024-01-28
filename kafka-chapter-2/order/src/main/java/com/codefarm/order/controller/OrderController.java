@@ -20,4 +20,34 @@ public class OrderController {
     OrderResponse createOrder(@RequestBody OrderRequest orderRequest){
         return orderService.processOrder(orderRequest);
     }
+
+    //demonstration for different usecases of event producer
+
+    @PostMapping("/send/key")
+    String sendMessageToTopicWithKey(@RequestBody String message){
+        return orderService.sendMessageToTopicWithKey(message);
+    }
+
+    @PostMapping("/send/key/partition")
+    String sendMessageToTopicWithKeyAndPartition(@RequestBody String message){
+        return orderService.sendMessageToTopicWithKeyAndPartition(message);
+    }
+
+    @PostMapping("/send/key/partition/timestamp")
+    String sendMessageToTopicWithKeyAndPartitionAndTimestamp(@RequestBody String message){
+        return orderService.sendMessageToTopicWithKeyAndPartitionAndTimestamp(message);
+    }
+
+    @PostMapping("/send/producer/record")
+    String sendMessageToTopicWithProducerRecord(@RequestBody String message){
+        return orderService.sendMessageToTopicWithProducerRecord(message);
+    }
+    @PostMapping("/send/producer/record/headers")
+    String sendMessageToTopicWithProducerRecordAndHeaders(@RequestBody String message){
+        return orderService.sendMessageToTopicWithProducerRecordAndHeaders(message);
+    }
+    @PostMapping("/send/message")
+    String sendMessageToTopicWithMessage(@RequestBody String message){
+        return orderService.sendMessageToTopicWithMessage(message);
+    }
 }
